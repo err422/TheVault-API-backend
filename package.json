@@ -15,7 +15,7 @@
     "@supabase/supabase-js": "^2.44.4"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "keywords": ["api", "counter", "express", "render", "supabase"],
   "author": "Your Name",
