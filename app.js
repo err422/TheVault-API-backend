@@ -131,3 +131,20 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Count API server running on port ${PORT}`);
 });
+
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'YOUR_SUPABASE_URL';
+const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+async function countVisit(pageSlug) {
+  const { error } = await supabase.rpc('increment_view_count', { page_slug: pageSlug });
+  if (error) {
+    console.error('Failed to increment visit count:', error);
+  }
+}
+
+// Example usage: count visit for current page
+countVisit(window.location.pathname);
