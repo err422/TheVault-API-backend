@@ -2,7 +2,7 @@
   "name": "count-api-server",
   "version": "1.0.0",
   "type": "module",
-  "description": "Simple count API server for tracking website visits",
+  "description": "Simple count API server for tracking website visits using Supabase",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
